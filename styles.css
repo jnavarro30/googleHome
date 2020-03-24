@@ -1,0 +1,249 @@
+:root{
+    --google-lightgray: #F0F0F0;
+    --google-gray: rgb(97, 95, 95);
+    --google-blue: #4285F4;
+    --google-red: #EA4335;
+    --google-yellow: #FBBC05;
+    --google-green: #34A853;
+    --google-black: rgb(66, 62, 62);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body, .container{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/***** Nav *****/
+
+nav{
+    display: flex;
+}
+nav section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-right{
+    justify-content: flex-end;
+    position: relative;
+}
+nav section > *{
+    margin: 1rem;
+    text-decoration: none;
+    color: var(--google-gray);
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+.icon:hover{
+    cursor: pointer;
+    color: black;
+}
+.pop{
+    position: absolute;
+    font-size: 0.8rem;
+    color: black;
+    border: 1px solid black;
+    padding: 0.1rem;
+    visibility: hidden;
+}
+.apps2{
+    transform: translate(-120%, 30%);
+}
+.user2{
+    transform: translate(10%, 30%);
+}
+.apps:hover ~ .apps2, .user:hover ~ .user2{
+    visibility: visible;
+}
+
+/***** Main *****/
+
+main{
+    text-align: center;
+}
+.main{
+    margin-top: 5rem;
+    font-size: 0;
+}
+.google{
+    font-size: 5rem;
+}
+.google:nth-child(1){
+    color: var(--google-blue);
+}
+.google:nth-child(2){
+    color: var(--google-red);
+}
+.google:nth-child(3){
+    color: var(--google-yellow);
+}
+.google:nth-child(4){
+    color: var(--google-blue);
+}
+.google:nth-child(5){
+    color: var(--google-green);
+}
+.google:nth-child(6){
+    color: var(--google-red);
+}
+.search-bar{
+    width: 500px;
+    height: 45px;
+    margin: 0 auto;
+    border: 1px solid var(--google-lightgray);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.search-bar > i{
+    margin: 0.5rem;
+    color: var(--google-gray);
+}
+.mic2{
+    font-size: 0.8rem;
+    position: absolute;
+    background: var(--google-black);
+    color: white;
+    padding: 0.1rem;
+    transform: translate(265%, 190%);
+}
+.triangle{
+    height: 10px;
+    width: 10px;
+    font-size: 12px;
+    position: absolute;
+    background: var(--google-black);
+    color: white;
+    padding: 0.1rem;
+    transform: translate(2295%, 250%) rotate(45deg);
+}
+.voice{
+    visibility: hidden;
+}
+.mic:hover ~ .voice{
+    visibility: visible;
+}
+.input-bar{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.search-bar, .buttons{
+    margin-top: 1.5rem;
+}
+.btn{
+    padding: 0.6rem;
+    margin: 0.5rem;
+    border: none;
+    color: var(--google-gray);
+    font-size: 0.9rem;
+    border-radius: 3px;
+    outline: none;
+}
+.btn:hover{
+    cursor: pointer;
+    outline: 1px solid var(--google-gray);
+    color: black;
+}
+.tagline{
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: darkblue;
+}
+.tagline:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/***** Footer *****/
+
+footer{
+    display: flex;
+    border-top: 1px solid var(--google-gray);
+    background: var(--google-lightgray);
+}
+footer section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.footer-right{
+    justify-content: flex-end;
+}
+footer section > *{
+    margin: 1rem;
+    text-decoration: none;
+    color: var(--google-gray);
+}
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+/***** Responsive *****/
+
+@media (max-width: 420px){
+    nav{
+        border-bottom: 1px solid var(--google-gray);
+        background: var(--google-lightgray);
+    }
+    nav, footer{
+        flex-wrap: wrap;
+    }
+    .nav-left, .nav-right, .footer-left, .footer-right{
+        justify-content: center;
+    }
+    .apps2{
+        transform: translate(40%, 30%);
+    }
+    .user2{
+        transform: translate(120%, 30%);
+    }
+    .search-bar{
+        width: 350px;
+    }
+    .mic2{
+        transform: translate(148%, 170%);
+        border-radius: 5px;
+    }
+    .triangle{
+        transform: translate(1535%, 220%) rotate(45deg);
+        border-radius: 1px;
+    }
+}
+@media (max-width: 320px){
+    nav, footer{
+        font-size: 12px;
+    }
+    .main{
+        margin: 1rem;
+    }
+    .google{
+        font-size: 4rem;
+    }
+    .search-bar{
+        width: 280px;
+    }
+    .btn{
+        font-size: 12px;
+    }
+    .mic2{
+        transform: translate(107%, 170%);
+        border-radius: 5px;
+    }
+    .triangle{
+        transform: translate(1200%, 220%) rotate(45deg);
+        border-radius: 1px;
+    }
+}
